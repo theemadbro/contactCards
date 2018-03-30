@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Contact Cards</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			console.log($)
+
+			function addcard(){
+
+			}
+
+			var i=0
+			$('#formdone').click(function(){
+				i++
+                $('.cardCont').append('<div value="'+i+'" id="card'+i+'" class="cardtest"><h1 class="cardswitch">'+$('#fnval').val()+' '+$('#lnval').val()+'</h1><p class="cardswitch">Click for Description!</p><h3 class="cardswitch" style="display: none">'+$('#descval').val()+'</h3></div>')
+                console.log($('#card1').val())
+                    $('.textinput').val(function(){
+                        $('this').text("")
+                    })
+                return false
+            })
+
+
+
+			$(document).on('click', '.cardtest', function(){
+				$('.cardswitch', this).toggle()
+			})
+
+
+
+			$('#testadd').click(function(){
+				$('.cardCont').append('<div class="cardtest"></div>')
+			})
+
+		})
+				
+
+	</script>
+</head>
+<body>
+	<div class='wrapper'>
+		<div class="form">
+			<form>
+				First Name: <input class="textinput" id="fnval" type="text" name="fname"><br>
+				Last Name: <input class="textinput" id="lnval" type="text" name="lname"><br>
+				Description<br><textarea class="textinput" id="descval" rows="4" cols="25" placeholder="Enter Description" "></textarea><br>
+				<input id="formdone" type="submit" value="Add User" name="Add User">
+			</form>
+			<button id="testadd">press to add div?</button>
+		</div>
+		<div class="cardCont">
+			<!-- <div class="cardtest">
+				<h1 class="cardswitch">FIRST LAST</h1>
+				<p class="cardswitch">Click for Description!</p>
+			</div> -->
+		</div>
+	</div>
+</body>
+</html>
